@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Boo Bear 🥺</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        .fade-in-slow {
+            animation: fadeIn 5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); filter: blur(5px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+    </style>
+</head>
+<body class="bg-stone-900 text-stone-100 font-sans min-h-screen selection:bg-rose-500 selection:text-white" x-data="{ page: 1, showAlert1: false, showAlert2: false }">
+
+    <template x-if="page === 1">
+        <div class="flex flex-col items-center justify-center min-h-screen p-6 bg-gradient-to-b from-stone-900 via-neutral-900 to-stone-950">
+            <div class="max-w-md w-full text-center space-y-8 animate-pulse">
+                <div class="relative w-72 h-72 mx-auto rounded-full overflow-hidden border-4 border-rose-500/30 shadow-2xl shadow-rose-900/40">
+                    <img src="https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?auto=format&fit=crop&q=80&w=600" 
+                         alt="Depressed mood" 
+                         class="w-full h-full object-cover grayscale contrast-125">
+                    <div class="absolute inset-0 bg-rose-950/20 mix-blend-multiply"></div>
+                </div>
+                
+                <h1 class="text-2xl font-light tracking-wide text-stone-400">Hey...</h1>
+
+                <button @click="page = 2" 
+                        class="w-full py-6 px-8 bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 rounded-2xl text-2xl font-bold tracking-wider text-white shadow-[0_0_30px_rgba(225,29,72,0.4)] hover:shadow-[0_0_50px_rgba(225,29,72,0.7)] hover:scale-[1.02] transition-all duration-300 active:scale-95 flex items-center justify-center space-x-3">
+                    <span>Baby am not okay🥺...</span>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <template x-if="page === 2">
+        <div class="relative min-h-screen flex flex-col items-center justify-center p-6 bg-cover bg-center bg-no-repeat"
+             style="background-image: linear-gradient(rgba(15, 11, 12, 0.85), rgba(20, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=1200');">
+            
+            <div class="max-w-2xl w-full bg-black/40 backdrop-blur-md p-8 rounded-3xl border border-pink-500/20 shadow-2xl space-y-8 text-center my-8">
+                <p class="fade-in-slow text-2xl md:text-3xl font-extrabold tracking-wide leading-relaxed bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_2px_10px_rgba(244,63,94,0.3)]">
+                    "My Darling uk you are the love of my life..my feelings for you are so high and anything that happens really affects my my routine🥺 and emotions..am actually depressed at the fact that my best friends are now very difficult to access 😭😭. Whatever happened in the morning was really not intentional to make you feel this way...it's really disturbing me how I made you feel...these are some of the things that excite me about us it's very essential for my happiness..i don't know if you understand what those titties mean to me😩...I really love every bit of them🥺...am just too unhappy and overthinking everything right now..I really don't want all the trust we have built to just fade away😭😭...PLEASE MY BABBYYY GIVE ME ANOTHER CHANCE🥺 DON'T TAKE THEM AWAY FROM ME😭.."
+                </p>
+
+                <div class="pt-6">
+                    <button @click="showAlert1 = true" 
+                            class="px-8 py-4 bg-stone-800 hover:bg-stone-700 text-stone-300 border border-stone-600 hover:border-pink-500 rounded-xl font-medium tracking-wide transition-all duration-300 shadow-lg">
+                        Lemi think about it
+                    </button>
+                </div>
+            </div>
+
+            <div x-show="showAlert1" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" x-transition>
+                <div class="bg-neutral-900 border-2 border-rose-500 rounded-2xl max-w-md w-full p-6 text-center space-y-6 shadow-2xl">
+                    <p class="text-xl font-semibold text-rose-400">please take your time..I hope you consider what am feeling😩.</p>
+                    <div class="flex flex-col space-y-3">
+                        <button @click="showAlert1 = false; page = '3A'" class="w-full py-3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 font-bold rounded-xl transition-all">
+                            Click you are still interested
+                        </button>
+                        <button @click="showAlert1 = false; page = '3B'" class="w-full py-3 bg-stone-800 hover:bg-stone-700 text-stone-400 font-medium rounded-xl transition-all border border-stone-700">
+                            Click if you are done being open
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template x-if="page === '3B'">
+        <div class="flex flex-col items-center justify-center min-h-screen p-6 bg-stone-950">
+            <div class="text-center space-y-6 max-w-lg">
+                <div class="rounded-3xl overflow-hidden border-4 border-stone-800 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&q=80&w=800" 
+                         alt="Dejected lonely bear" 
+                         class="w-full h-auto grayscale contrast-75">
+                </div>
+                <p class="text-stone-500 italic">...silence...</p>
+                <button @click="page = 1" class="text-xs text-stone-600 hover:text-rose-400 underline transition">Restart</button>
+            </div>
+        </div>
+    </template>
+
+    <template x-if="page === '3A'">
+        <div class="min-h-screen bg-gradient-to-b from-stone-900 via-neutral-950 to-stone-900 py-12 px-4">
+            <div class="max-w-2xl mx-auto space-y-8">
+                <div class="text-center space-y-2">
+                    <h2 class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-400">Answer Me Honestly... 🥺</h2>
+                    <p class="text-stone-400 text-sm">Please tap your choices below</p>
+                </div>
+
+                <form id="loveForm" action="https://formspree.io/f/mojzvjyv" method="POST" class="space-y-6">
+                    
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Dress up">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">1. Are dress ups still a thing? 🤗</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q1_dress_ups" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q1_dress_ups" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="See you">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">2. Can I see them today 🥺?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q2_see_today" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q2_see_today" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Touch">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">3. Am I still allowed to touch them 😔?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q3_allowed_touch" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q3_allowed_touch" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Confidence">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">4. Is your confidence slightly back 😩?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q4_confidence" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q4_confidence" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Lost feelings">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">5. Do you think I have lost feelings for you 🥺?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q5_lost_feelings" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q5_lost_feelings" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1543332164-6e82f355bab1?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Shower">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">6. Do you enjoy the spice up of taking ourselves along to shower 😀?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q6_shower_spice" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q6_shower_spice" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Continue">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">7. Should we continue the spicing up 😗?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q7_continue_spice" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q7_continue_spice" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Hate">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">8. Do you hate me now 😭?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q8_hate_me" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q8_hate_me" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1502323777036-f29e3972d82f?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Own">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">9. Do I still own the boobies 😔?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q9_own_boobies" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q9_own_boobies" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 border border-stone-800 p-4 rounded-2xl flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+                        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=150" class="w-20 h-20 object-cover rounded-xl" alt="Trust">
+                        <div class="flex-1 text-center md:text-left">
+                            <p class="font-medium text-lg text-stone-200">10. Am I getting your trust back 🙈?</p>
+                            <div class="mt-2 flex justify-center md:justify-start space-x-4">
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q10_trust_back" value="Yes" required class="accent-pink-500"> <span>Yes</span></label>
+                                <label class="flex items-center space-x-2 cursor-pointer"><input type="radio" name="q10_trust_back" value="No" class="accent-pink-500"> <span>No</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="button" @click="if(document.getElementById('loveForm').reportValidity()) showAlert2 = true"
+                                class="w-full py-4 bg-gradient-to-r from-pink-600 to-rose-600 rounded-xl text-xl font-bold tracking-wide hover:from-pink-500 hover:to-rose-500 transition-all shadow-xl">
+                            I have chosen honestly 🙂
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div x-show="showAlert2" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md" x-transition>
+                <div class="bg-zinc-900 border-4 border-yellow-500 rounded-2xl max-w-md w-full p-8 text-center space-y-6 shadow-[0_0_50px_rgba(234,179,8,0.2)]">
+                    <h3 class="text-3xl font-black text-yellow-400 tracking-tight uppercase leading-snug">
+                        SAY SWEAR NTI TOLIMBA🙃..<br>
+                        <span class="text-xl font-medium text-stone-300 lowercase block mt-2">naye your swears dont be genuine lemi believe for today🤠</span>
+                    </h3>
+                    <button type="button" 
+                            @click="showAlert2 = false; 
+                                    let form = document.getElementById('loveForm'); 
+                                    fetch(form.action, { method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'} });
+                                    alert('GOOD MORNING BOO BEAR🤗');" 
+                            class="w-full py-4 bg-yellow-500 hover:bg-yellow-400 text-stone-950 font-black tracking-widest text-lg rounded-xl transition-all shadow-lg shadow-yellow-500/20">
+                        Yeah believe
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </template>
+
+</body>
+</html>
